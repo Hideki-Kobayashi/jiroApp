@@ -16,6 +16,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Yaen2Activity extends AppCompatActivity {
     EditText mNinzuEditText;
     Button mButtonGo;
@@ -23,7 +27,7 @@ public class Yaen2Activity extends AppCompatActivity {
 
 
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference mMachininzuRef = mRootRef.child("待ち人数は");
+    DatabaseReference mYaen2NinzuRef = mRootRef.child("野猿街道2店");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,7 @@ public class Yaen2Activity extends AppCompatActivity {
         mNinzuTextView = (TextView) findViewById(R.id.machininzuTextView);
     }
     public void map(View v){
-        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=ラーメン二郎小滝橋通り店"));
+        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=ラーメン二郎野猿街道2店"));
         startActivity(intent);
 
     }
@@ -46,10 +50,10 @@ public class Yaen2Activity extends AppCompatActivity {
     public void twitter(View v){
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
-        intent.setPackage("com.twitter.android");
+        //intent.setPackage("com.twitter.android");
         intent.setType("image/png");
-        intent.putExtra(Intent.EXTRA_TEXT, "投稿したい内容");
-        intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("path_to_img"));
+        intent.putExtra(Intent.EXTRA_TEXT, "#ラーメン二郎 ＃野猿街道2店");
+        //intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("path_to_img"));
         startActivity(intent);
         /*Intent intent = new Intent( Intent.ACTION_SEND )
                 .setType( "text/plain" )
@@ -61,7 +65,7 @@ public class Yaen2Activity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        mMachininzuRef.addValueEventListener(new ValueEventListener() {
+        mYaen2NinzuRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String text = dataSnapshot.getValue(String.class);
@@ -77,11 +81,18 @@ public class Yaen2Activity extends AppCompatActivity {
         mButtonGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String timeText = getNowDate();
                 String mNinzuText = mNinzuEditText.getText().toString();
-                mMachininzuRef.setValue(mNinzuText + "人");
+                mYaen2NinzuRef.setValue(timeText + "現在\n" + "待ち人数は" + mNinzuText + "人");
             }
         });
 
 
+    }
+
+    public static String getNowDate(){
+        final DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        final Date date = new Date(System.currentTimeMillis());
+        return df.format(date);
     }
 }

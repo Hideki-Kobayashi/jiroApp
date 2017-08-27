@@ -16,6 +16,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 public class MitaActivity extends AppCompatActivity {
     EditText mNinzuEditText;
     Button mButtonGo;
@@ -23,7 +28,7 @@ public class MitaActivity extends AppCompatActivity {
 
 
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference mMachininzuRef = mRootRef.child("待ち人数は");
+    DatabaseReference mMitaNinzuRef = mRootRef.child("三田本店");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +66,7 @@ public class MitaActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        mMachininzuRef.addValueEventListener(new ValueEventListener() {
+        mMitaNinzuRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String text = dataSnapshot.getValue(String.class);
@@ -77,11 +82,18 @@ public class MitaActivity extends AppCompatActivity {
         mButtonGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String timeText = getNowDate();
                 String mNinzuText = mNinzuEditText.getText().toString();
-                mMachininzuRef.setValue(mNinzuText + "人");
+                mMitaNinzuRef.setValue(timeText + "現在\n" + "待ち人数は"+ mNinzuText + "人");
             }
         });
 
 
+    }
+
+    public static String getNowDate(){
+        final DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        final Date date = new Date(System.currentTimeMillis());
+        return df.format(date);
     }
 }
