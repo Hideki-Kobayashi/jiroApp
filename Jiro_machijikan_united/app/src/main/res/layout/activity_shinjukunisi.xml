@@ -9,9 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView2"
@@ -21,7 +22,7 @@
             android:gravity="center"
             android:text="小滝橋通り店"
             android:textColor="@android:color/background_dark"
-            android:textSize="32sp" />
+            android:textSize="40sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +40,9 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="待っている人数"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@android:color/background_dark"
+                android:textColorHint="@android:color/background_dark" />
 
             <Button
                 android:id="@+id/buttonGo"
@@ -47,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ninzuEditText"
                 android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:text="Go!" />
         </LinearLayout>
@@ -58,6 +62,8 @@
             android:layout_weight="0.8"
             android:gravity="center"
             android:hint="現在の待ち人数"
+            android:textColor="@android:color/background_dark"
+            android:textColorHint="@android:color/background_dark"
             android:textSize="24sp" />
 
         <LinearLayout
