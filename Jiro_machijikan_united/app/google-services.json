@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "511022713790",
+    "firebase_url": "https://jiro-170cb.firebaseio.com",
+    "project_id": "jiro-170cb",
+    "storage_bucket": "jiro-170cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511022713790:android:bb0aca9d533eed23",
+        "android_client_info": {
+          "package_name": "com.lifeistech.android.jiro_machijikan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511022713790-ie5bcgi6lmupdikcls7h38avod0tm12h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lifeistech.android.jiro_machijikan",
+            "certificate_hash": "3a003b41e7f7aefba7f2ecbf9ca208c6c257b122"
+          }
+        },
+        {
+          "client_id": "511022713790-guro8u0c4t4oju062uprt98tdfgv6fsf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT-Ua_BUxKqrbfVrhxcczAie4iQBzcsHs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511022713790-guro8u0c4t4oju062uprt98tdfgv6fsf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

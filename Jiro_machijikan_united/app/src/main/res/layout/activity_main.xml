@@ -29,7 +29,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/ninzu"
+                android:id="@+id/ninzuEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/spinner1"
@@ -40,20 +40,20 @@
                 android:inputType="number" />
 
             <Button
-                android:id="@+id/go"
+                android:id="@+id/buttonGo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ninzu"
+                android:layout_below="@+id/ninzuEditText"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="1"
                 android:text="Go!" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/machijikan"
+            android:id="@+id/machininzuTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ninzu"
+            android:layout_below="@+id/ninzuEditText"
             android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:gravity="center"
@@ -63,8 +63,8 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_alignStart="@+id/go"
-            android:layout_below="@+id/machijikan"
+            android:layout_alignStart="@+id/buttonGo"
+            android:layout_below="@+id/machininzuTextView"
             android:layout_gravity="center"
             android:layout_margin="16dp"
             android:layout_weight="1"

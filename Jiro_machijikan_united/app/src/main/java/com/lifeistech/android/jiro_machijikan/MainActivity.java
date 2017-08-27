@@ -1,13 +1,10 @@
 package com.lifeistech.android.jiro_machijikan;
 
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity  {
@@ -32,9 +28,9 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ninzu = (EditText) findViewById(R.id.ninzu);
-        machijikan = (TextView) findViewById(R.id.machijikan);
-        go = (Button) findViewById(R.id.go);
+        ninzu = (EditText) findViewById(R.id.ninzuEditText);
+        machijikan = (TextView) findViewById(R.id.machininzuTextView);
+        go = (Button) findViewById(R.id.buttonGo);
         Spinner s1 = (Spinner) findViewById(R.id.spinner1);
         final String item = (String) s1.getSelectedItem();
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item);
