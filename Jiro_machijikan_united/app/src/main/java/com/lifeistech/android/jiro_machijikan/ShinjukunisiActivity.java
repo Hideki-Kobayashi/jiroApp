@@ -34,8 +34,8 @@ public class ShinjukunisiActivity extends AppCompatActivity {
         mButtonGo = (Button) findViewById(R.id.buttonGo);
         mNinzuTextView = (TextView) findViewById(R.id.machininzuTextView);
     }
-    public void star(View v){
-        Intent intent = new Intent(this,Main2Activity.class);
+    public void map(View v){
+        Intent intent= new Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?q=ラーメン二郎小滝橋通り店"));
         startActivity(intent);
 
     }
@@ -44,9 +44,17 @@ public class ShinjukunisiActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void twitter(View v){
-        String url = "https://twitter.com/share?";
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.setPackage("com.twitter.android");
+        intent.setType("image/png");
+        intent.putExtra(Intent.EXTRA_TEXT, "投稿したい内容");
+        intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("path_to_img"));
         startActivity(intent);
+        /*Intent intent = new Intent( Intent.ACTION_SEND )
+                .setType( "text/plain" )
+                .putExtra( Intent.EXTRA_TEXT, "こんにちわ せかい！" );
+        startActivity(intent);*/
     }
 
     @Override
@@ -70,7 +78,7 @@ public class ShinjukunisiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String mNinzuText = mNinzuEditText.getText().toString();
-                mMachininzuRef.setValue(mNinzuText + "人");
+                mMachininzuRef.setValue(mNinzuText);
             }
         });
 
