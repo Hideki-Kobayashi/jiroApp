@@ -70,7 +70,7 @@ public class MitaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String mNinzuText = mNinzuEditText.getText().toString();
-                mMachininzuRef.setValue(mNinzuText);
+                mMachininzuRef.setValue(mNinzuText + "人");
             }
         });
 
