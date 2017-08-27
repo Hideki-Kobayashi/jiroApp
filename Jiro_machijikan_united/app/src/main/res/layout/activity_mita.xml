@@ -17,7 +17,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
+            android:layout_weight="0.4"
             android:gravity="center"
             android:text="三田本店"
             android:textColor="@android:color/background_dark"
@@ -61,49 +61,33 @@
             android:textSize="24sp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_weight="0.8"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:background="@drawable/google"
-                android:onClick="twitter" />
+                android:onClick="map" />
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_alignBaseline="@+id/button8"
-                android:layout_alignBottom="@+id/button8"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:background="@drawable/camera"
-                android:onClick="instagram" />
+                android:onClick="camera" />
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_alignBaseline="@+id/button3"
-                android:layout_alignBottom="@+id/button3"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:background="@drawable/twitter"
-                android:onClick="camera" />
+                android:onClick="twitter" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
