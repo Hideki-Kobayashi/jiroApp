@@ -4,20 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lifeistech.android.jiro_machijikan.MainActivity">
+    tools:context="com.lifeistech.android.jiro_machijikan.MitaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-        <Spinner
-            android:id="@+id/spinner1"
+        <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1" />
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="三田本店"
+            android:textColor="@android:color/background_dark"
+            android:textSize="32sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,46 +48,34 @@
                 android:layout_below="@+id/ninzu"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="1"
-                android:onClick="go"
                 android:text="Go!" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/machijikan"
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ninzu"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:gravity="center"
-            android:hint="待ち時間" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_alignStart="@+id/go"
-            android:layout_below="@+id/machijikan"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
-            android:layout_weight="1"
-            android:onClick="star"
-            android:text="今日の二郎を評価" />
+            android:hint="現在の待ち人数"
+            android:textSize="24sp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="0.8"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/twitter" />
+                android:background="@drawable/google"
+                android:onClick="twitter" />
 
             <Button
                 android:id="@+id/button7"
@@ -92,11 +84,12 @@
                 android:layout_alignBaseline="@+id/button8"
                 android:layout_alignBottom="@+id/button8"
                 android:layout_alignParentEnd="true"
-                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/insta"
-                android:onClick="camera" />
+                android:background="@drawable/camera"
+                android:onClick="instagram" />
 
             <Button
                 android:id="@+id/button8"
@@ -105,12 +98,12 @@
                 android:layout_alignBaseline="@+id/button3"
                 android:layout_alignBottom="@+id/button3"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/camera"
+                android:background="@drawable/twitter"
                 android:onClick="camera" />
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
