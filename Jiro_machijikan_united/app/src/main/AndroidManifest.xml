@@ -6,10 +6,10 @@
         android:allowBackup="true"
         android:icon="@drawable/jirotter"
         android:label="jirotter"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/jirotter"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartActivity">
+        <activity android:name=".TitleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,8 @@
         <activity android:name=".MitaActivity" />
         <activity android:name=".Yaen2Activity" />
         <activity android:name=".KabukityoActivity" />
-        <activity android:name=".ShinjukunisiActivity"/>
+        <activity android:name=".ShinjukunisiActivity" />
+        <activity android:name=".StartActivity"></activity>
     </application>
 
 </manifest>

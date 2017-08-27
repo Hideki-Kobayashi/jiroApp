@@ -41,8 +41,7 @@
                 android:ems="10"
                 android:hint="待っている人数"
                 android:inputType="number"
-                android:textColor="@android:color/background_dark"
-                android:textColorHint="@android:color/background_dark" />
+                android:textColor="@android:color/background_dark" />
 
             <Button
                 android:id="@+id/buttonGo"
@@ -52,18 +51,19 @@
                 android:layout_centerHorizontal="true"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                android:text="Go!" />
+                android:background="@android:color/background_dark"
+                android:text="Go!"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/machininzuTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="0.8"
             android:gravity="center"
             android:hint="現在の待ち人数"
             android:textColor="@android:color/background_dark"
-            android:textColorHint="@android:color/background_dark"
             android:textSize="24sp" />
 
         <LinearLayout
@@ -76,22 +76,22 @@
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:background="@drawable/google"
                 android:onClick="map" />
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:background="@drawable/camera"
                 android:onClick="camera" />
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:background="@drawable/twitter"
                 android:onClick="twitter" />
         </LinearLayout>
