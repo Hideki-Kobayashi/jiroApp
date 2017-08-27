@@ -28,7 +28,7 @@ public class ShinjukunisiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mita);
+        setContentView(R.layout.activity_shinjukunisi);
 
         mNinzuEditText = (EditText) findViewById(R.id.ninzuEditText);
         mButtonGo = (Button) findViewById(R.id.buttonGo);
@@ -78,7 +78,7 @@ public class ShinjukunisiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String mNinzuText = mNinzuEditText.getText().toString();
-                mMachininzuRef.setValue(mNinzuText);
+                mMachininzuRef.setValue(mNinzuText + "人");
             }
         });
 
