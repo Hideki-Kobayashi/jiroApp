@@ -50,8 +50,8 @@ public class Yaen2Activity extends AppCompatActivity {
     public void twitter(View v){
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
-        //intent.setPackage("com.twitter.android");
-        intent.setType("image/png");
+        intent.setPackage("com.twitter.android");
+        intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, "#ラーメン二郎 ＃野猿街道2店");
         //intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("path_to_img"));
         startActivity(intent);

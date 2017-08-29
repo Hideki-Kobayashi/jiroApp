@@ -51,7 +51,7 @@ public class ShinjukunisiActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
         intent.setPackage("com.twitter.android");
-        //intent.setType("image/png");
+        intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, "#ラーメン二郎 #小滝橋通店");
         //intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("path_to_img"));
         startActivity(intent);

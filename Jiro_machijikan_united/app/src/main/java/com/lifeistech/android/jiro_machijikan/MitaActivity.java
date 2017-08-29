@@ -52,9 +52,9 @@ public class MitaActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
         intent.setPackage("com.twitter.android");
-        intent.setType("image/png");
-        intent.putExtra(Intent.EXTRA_TEXT, "投稿したい内容");
-        intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("path_to_img"));
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, "#ラーメン二郎 #三田本店");
+        //intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("path_to_img"));
         startActivity(intent);
         /*Intent intent = new Intent( Intent.ACTION_SEND )
                 .setType( "text/plain" )
