@@ -20,7 +20,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * ここのActivityは、エリアごとにわけるとエリアの数だけActivity増やさないといけないから
+ * mAreaNameとかを渡すActivityを作って、IntentのsetExtraで外側からセットできるようにする。
+ */
 public class KabukityoActivity extends AppCompatActivity {
+
     EditText mNinzuEditText;
     Button mButtonGo;
     TextView mNinzuTextView;
@@ -38,6 +43,10 @@ public class KabukityoActivity extends AppCompatActivity {
         mButtonGo = (Button) findViewById(R.id.buttonGo);
         mNinzuTextView = (TextView) findViewById(R.id.machininzuTextView);
     }
+
+    /**
+     * ここらへんの関数とライフサイクルの関数は、性質が異なるから、並び順をライフサイクルの関数 -> 自分の関数(その中でもpublic privateとか役割とか)
+     */
     public void map(View v){
         Intent intent= new Intent(Intent.ACTION_VIEW,Uri.parse("geo:0,0?q=ラーメン二郎歌舞伎町店"));
         startActivity(intent);
@@ -65,6 +74,7 @@ public class KabukityoActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        // 多分ここは、onCreateでいいはず
         mKabukityoNinzuRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -82,6 +92,7 @@ public class KabukityoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // 関数内で宣言する変数には、mをつけない
                 String timeText = getNowDate();
                 String mNinzuText = mNinzuEditText.getText().toString();
                 mKabukityoNinzuRef.setValue(timeText + "現在\n" + "待ち人数は" + mNinzuText + "人");

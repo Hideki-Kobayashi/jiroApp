@@ -21,6 +21,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
+/**
+ * KabukichouActivityと同じコメント
+ */
 public class MitaActivity extends AppCompatActivity {
     EditText mNinzuEditText;
     Button mButtonGo;

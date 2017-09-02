@@ -15,6 +15,16 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity  {
+
+    /**
+     * 変数の宣言も規則を持たせる
+     * コメントで
+     * // View
+     *
+     * // value
+     *
+     * みたいにしてわかるようにしておく
+     */
     EditText ninzu;
     TextView machijikan;
     Button go;
@@ -45,6 +55,7 @@ public class MainActivity extends AppCompatActivity  {
         s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView arg0, View arg1, int arg2, long arg3) {
+                // 文字列で比較はあんまり、好ましくない。できれば違う手法がいい例えばenumとか(調べてみな)
                 if (item.equals("三田本店")) {
                         numberText = ninzu.getText().toString();
                         number = Integer.parseInt(numberText);

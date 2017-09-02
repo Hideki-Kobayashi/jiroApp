@@ -20,6 +20,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+/**
+ * KabukichouActivityと同じコメント
+ */
 public class Yaen2Activity extends AppCompatActivity {
     EditText mNinzuEditText;
     Button mButtonGo;

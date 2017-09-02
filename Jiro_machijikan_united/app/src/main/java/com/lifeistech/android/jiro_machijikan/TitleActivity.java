@@ -19,6 +19,7 @@ public class TitleActivity extends AppCompatActivity {
         //actionBar.hide();
         getSupportActionBar().hide();
 
+        // ここをスレッドにする意味はない？スプラッシュ画面かな？
         moveToStartActivity = new Runnable() {
             @Override
             public void run() {
